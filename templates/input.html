@@ -1,0 +1,178 @@
+<!-- input.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data for IC50 Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="website-title">
+            <span><strong>   OncoGuideRx</strong></span> <br>
+            <!-- <small><i>Guiding Precision Cancer Therapy for Personalized Care</small></i> -->
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="{{ url_for('drug_lookup') }}">Drug Lookup</a>
+            <a href="{{ url_for('input_data') }}">Predict IC50</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <div class="container">
+        <header>
+            <h1>Input Data for IC50 Prediction</h1>
+        </header>
+        <section class="form-section">
+            <form action="/predict" method="POST">
+                <div class="form-group">
+                    <label for="auc">AUC (Area Under Curve):</label>
+                    <input type="number" name="AUC" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="z_score">Z_SCORE:</label>
+                    <input type="number" name="Z_SCORE" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Whole Exome Sequencing (WES):</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="Whole_Exome_Sequencing_WES" value="Y" required> Yes</label>
+                        <label><input type="radio" name="Whole_Exome_Sequencing_WES" value="N" required> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Copy Number Alterations (CNA):</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="Copy_Number_Alterations_CNA" value="Y" required> Yes</label>
+                        <label><input type="radio" name="Copy_Number_Alterations_CNA" value="N" required> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gene Expression:</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="Gene_Expression" value="Y" required> High</label>
+                        <label><input type="radio" name="Gene_Expression" value="N" required> Low</label>
+                    </div>
+                </div>
+
+                <!-- Drug IDs Input (Up to 5 Drugs) -->
+                <a href="{{ url_for('drug_lookup') }}" target="_blank">Lookup Drug IDs</a>
+                {% for i in range(1, 6) %}
+                <div class="form-group">
+                    <label for="drug_id_{{ i }}">Drug ID {{ i }}:</label>
+                    <input type="number" name="DRUG_ID_{{ i }}" {% if i == 1 %}required{% endif %}>
+                    {% if i == 1 %}
+                        
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <!-- Tissue Descriptors -->
+                <div class="form-group">
+                    <label for="tissue_descriptor1">Primary Tissue Descriptor:</label>
+                    <select name="GDSC_Tissue_descriptor_1" required>
+                    <option value="aero_dig_tract">Aero Digestive Tract</option>
+                    <option value="bone">Bone</option>
+                    <option value="breast">Breast</option>
+                    <option value="digestive_system">Digestive System</option>
+                    <option value="kidney">Kidney</option>
+                    <option value="large_intestine">Large Intestine</option>
+                    <option value="leukemia">Leukemia</option>
+                    <option value="lung">Lung</option>
+                    <option value="lung_NSCLC">Lung NSCLC</option>
+                    <option value="lung_SCLC">Lung SCLC</option>
+                    <option value="lymphoma">Lymphoma</option>
+                    <option value="myeloma">Myeloma</option>
+                    <option value="nervous_system">Nervous System</option>
+                    <option value="neuroblastoma">Neuroblastoma</option>
+                    <option value="pancreas">Pancreas</option>
+                    <option value="skin">Skin</option>
+                    <option value="soft_tissue">Soft Tissue</option>
+                    <option value="thyroid">Thyroid</option>
+                    <option value="urogenital_system">Urogenital System</option>    
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tissue_descriptor2">Secondary Tissue Descriptor:</label>
+                    <select name="GDSC_Tissue_descriptor_2" required>
+                        <option value="acute_myeloid_leukaemia">Acute Myeloid Leukemia</option>
+                    <option value="adrenal_gland">Adrenal Gland</option>
+                    <option value="anaplastic_large_cell_lymphoma">Anaplastic Large Cell Lymphoma</option>
+                    <option value="B_cell_leukemia">B-Cell Leukemia</option>
+                    <option value="B_cell_lymphoma">B-Cell Lymphoma</option>
+                    <option value="biliary_tract">Biliary Tract</option>
+                    <option value="Bladder">Bladder</option>
+                    <option value="bone_other">Bone Other</option>
+                    <option value="breast">Breast</option>
+                    <option value="Burkitt_lymphoma">Burkitt Lymphoma</option>
+                    <option value="cervix">Cervix</option>
+                    <option value="chondrosarcoma">Chondrosarcoma</option>
+                    <option value="chronic_myeloid_leukaemia">Chronic Myeloid Leukemia</option>
+                    <option value="digestive_system_other">Digestive System Other</option>
+                    <option value="endometrium">Endometrium</option>
+                    <option value="ewings_sarcoma">Ewing's Sarcoma</option>
+                    <option value="fibrosarcoma">Fibrosarcoma</option>
+                    <option value="glioma">Glioma</option>
+                    <option value="hairy_cell_leukaemia">Hairy Cell Leukemia</option>
+                    <option value="haematopoietic_neoplasm other">Haematopoietic Neoplasm Other</option>
+                    <option value="head and neck">Head and Neck</option>
+                    <option value="Hodgkin_lymphoma">Hodgkin Lymphoma</option>
+                    <option value="kidney">Kidney</option>
+                    <option value="large_intestine">Large Intestine</option>
+                    <option value="leukemia">Leukemia</option>
+                    <option value="liver">Liver</option>
+                    <option value="Lung_other">Lung Other</option>
+                    <option value="lung_NSCLC_adenocarcinoma">Lung NSCLC Adenocarcinoma</option>
+                    <option value="lung_NSCLC_carcinoid">Lung NSCLC Carcinoid</option>
+                    <option value="lung_NSCLC_large cell">Lung NSCLC Large Cell</option>
+                    <option value="lung_NSCLC_not specified">Lung NSCLC Not Specified</option>
+                    <option value="lung_NSCLC_squamous_cell_carcinoma">Lung NSCLC Squamous Cell Carcinoma</option>
+                    <option value="lung_small_cell_carcinoma">Lung Small Cell Carcinoma</option>
+                    <option value="lymphoblastic_leukemia">Lymphoblastic Leukemia</option>
+                    <option value="lymphoblastic_T_cell_leukaemia">Lymphoblastic T-Cell Leukemia</option>
+                    <option value="lymphoid_neoplasm other">Lymphoid Neoplasm Other</option>
+                    <option value="medulloblastoma">Medulloblastoma</option>
+                    <option value="melanoma">Melanoma</option>
+                    <option value="mesothelioma">Mesothelioma</option>
+                    <option value="myeloma">Myeloma</option>
+                    <option value="neuroblastoma">Neuroblastoma</option>
+                    <option value="oesophagus">Oesophagus</option>
+                    <option value="ovary">Ovary</option>
+                    <option value="pancreas">Pancreas</option>
+                    <option value="prostate">Prostate</option>
+                    <option value="rhabdomyosarcoma">Rhabdomyosarcoma</option>
+                    <option value="skin_other">Skin Other</option>
+                    <option value="soft_tissue_other">Soft Tissue Other</option>
+                    <option value="stomach">Stomach</option>
+                    <option value="T_cell_leukemia">T-Cell Leukemia</option>
+                    <option value="testis">Testis</option>
+                    <option value="thyroid">Thyroid</option>
+                    <option value="urogenital_system_other">Urogenital System Other</option>
+                    <option value="uterus">Uterus</option> 
+
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Predict IC50</button>
+
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 OncoGuideRx. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

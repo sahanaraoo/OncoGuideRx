@@ -1,0 +1,44 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="website-title">
+            <span><strong>   OncoGuideRx</strong></span> <br>
+            <!-- <small><i>Guiding Precision Cancer Therapy for Personalized Care</small></i> -->
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="{{ url_for('drug_lookup') }}">Drug Lookup</a>
+            <a href="{{ url_for('input_data') }}">Predict IC50</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <header>
+            <h1>Prediction Results</h1>
+        </header>
+        <section class="result-section">
+            <!-- Display the graph -->
+            <div class="graph-container">
+                <img src="data:image/png;base64,{{ plot_url }}" alt="Prediction Graph">
+            </div>
+
+            <!-- Display the best suited drug name in bold -->
+            <h2>Best Suited Drug: <b>{{ best_drug_name }}</b></h2>
+        </section>
+        <br><br>
+        <footer>
+            <a href="{{ url_for('input_data') }}" class="btn">Try Another Prediction</a>
+        </footer>
+        <br>
+    </div>
+</body>
+</html>

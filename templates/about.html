@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - OncoGuideRx</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="website-title">
+            <span><strong>   OncoGuideRx</strong></span> <br>
+            <!-- <small class="tagline">Guiding Precision Cancer Therapy for Personalized Care</small> -->
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="{{ url_for('drug_lookup') }}">Drug Lookup</a>
+            <a href="{{ url_for('input_data') }}">Predict IC50</a>
+            <a href="{{ url_for('about') }}">About Us</a> 
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <header>
+            <h1>About Us</h1>
+        </header>
+
+        <section class="about-section">
+            <h2>Our Project</h2>
+            <p>This website was developed by a dedicated team of students from the Mangalore Institute of Technology & Engineering, Moodbidri as part of an academic project.</p>
+<!-- 
+            <div class="team-members">
+                <div class="team-member">
+                    <strong>Sahana Rao</strong>
+                </div>
+                <div class="team-member">
+                    <strong>Karthik Shettigar</strong>
+                </div>
+                <div class="team-member">
+                    <strong>Dhanush A</strong>
+                </div>
+                <div class="team-member">
+                    <strong>Dhanush Shetty</strong>
+                </div>
+            </div> -->
+
+            <h2>Our Mission</h2>
+            <p>At OncoGuideRx, our mission is to leverage advanced technology and data analysis to enhance cancer treatment options. We aim to empower healthcare professionals and patients with precise information that can lead to better treatment outcomes.</p>
+
+            <h2>Our Vision</h2>
+            <p>We envision a future where personalized medicine is the standard approach in oncology, allowing for tailored therapies that significantly improve patient care and quality of life.</p>
+
+            <h2>Our Commitment</h2>
+            <p>We are committed to continuous learning and innovation in the medical field. Our team strives to stay updated with the latest research and technological advancements to provide the best tools available for cancer therapy.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like more information about our project, please feel free to reach out to us at:</p>
+            <p><a href="mailto:contact@oncoguiderx.com">contact@oncoguiderx.com</a></p>
+
+            <h2>Join Us on Our Journey</h2>
+            <p>We invite you to follow our progress and contribute to our mission by sharing your insights and feedback. Together, we can make a difference in the fight against cancer.</p>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 OncoGuideRx. All rights reserved.</p>
+    </footer>
+</body>
+</html>

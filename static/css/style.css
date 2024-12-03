@@ -1,0 +1,278 @@
+/* General Body Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Softer light background */
+    color: #444; /* Darker text for better readability */
+}
+
+/* Header Styles */
+/* Header Styles */
+.header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and navbar */
+    align-items: center; /* Center items vertically */
+    background-color: #003D7A; /* Darker blue for a professional look */
+    color: #fff;
+    padding: 20px 0; /* Padding for header height */
+}
+
+.website-title {
+    font-size: 1.8em; /* Title size */
+    padding-left: 20px;
+}
+
+.navbar {
+    margin-top: 10px; /* Margin above navbar */
+}
+
+.navbar a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding around links */
+}
+
+.navbar a:hover {
+    background-color: #005EB8; /* Softer hover color */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Main Container Styles */
+.container {
+    max-width: 1200px; /* Centering and limiting width */
+    margin: auto;
+    padding: 20px;
+}
+
+/* Intro Section */
+.intro {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.intro h1 {
+   font-size: 2.5em;
+}
+
+.intro p {
+   font-size: 1.2em;
+}
+
+/* Button Styles */
+.btn {
+   display: inline-block;
+   background-color: #005EB8; /* Button color */
+   color: white;
+   padding: 10px 20px;
+   border-radius: 5px;
+   text-decoration: none;
+   border: none; /* Remove border for buttons */
+}
+
+.btn:hover {
+   background-color: #003D7A; /* Darker blue on hover */
+}
+
+/* Flashcard Styles */
+.flashcard-container {
+   display: flex;
+   justify-content: space-around; /* Space out flashcards evenly */
+}
+
+.flashcard {
+   background-color: #fff; /* White background for flashcards */
+   border-radius: 8px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   padding: 30px;
+   width: 27%; /* Fixed width for flashcards */
+}
+
+/* Dataset Info Section */
+.dataset-info,
+.benefits {
+   margin-top: 40px; /* Spacing between sections */
+}
+
+.dataset-info h2,
+.benefits h2 {
+   font-size: 2em; /* Larger headings for emphasis */
+}
+
+/* Benefit Card Styles */
+.benefit-card {
+   background-color: #e7f3ff; /* Light blue background for benefits */
+   border-left: 5px solid #005EB8; /* Left border for emphasis */
+   padding: 10px;
+   margin-bottom: 15px; /* Spacing between cards */
+}
+
+/* Form Section Styles */
+.form-section {
+    background-color: #fff; /* White background for form section */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+ }
+ 
+ /* Form Group Styles */
+ .form-group {
+    margin-bottom: 15px; /* Spacing between form groups */
+ }
+ 
+ /* Label Styles */
+ .form-section label {
+    display: block; /* Block display for labels to stack inputs vertically */
+    margin-bottom: 5px; /* Spacing below labels */
+    font-weight: bold; /* Make labels bold */
+ }
+ 
+ /* Input and Select Styles */
+ input[type='number'],
+ select {
+    width: calc(100% - 22px); /* Full width inputs with padding adjustment */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light grey border color */
+ }
+ 
+ /* Inline Radio Button Styles */
+ .radio-inline {
+    display: flex; /* Use flexbox to align items in a row */
+    gap: 25px; /* Space between radio buttons */
+ }
+ 
+/* Search Bar Styles for Drug Lookup Page */
+.search-bar {
+    width: calc(100% - 22px); /* Full width for search bar with padding adjustment */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px; /* Spacing below search bar */
+}
+
+/* Table Styles for Drug Lookup Page */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between borders */
+}
+
+table th,
+table td {
+    border: 1px solid #ddd; /* Light grey borders */
+    padding: 12px; /* Padding for table cells */
+}
+
+table th {
+    background-color: #005EB8; /* Header background color with softer blue tone*/
+    color: white; /* Header text color */
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for rows with softer gray tone*/
+}
+
+table tr:hover {
+    background-color: #ddd; /* Highlight row on hover with softer tone*/
+}
+
+/* Footer Styles */
+.footer {
+   text-align:center; 
+   padding:12px; 
+   background-color:#003D7A; 
+   color:white; 
+}
+/* About Section Styles */
+.about-section {
+    background-color: #fff; /* White background for content area */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside the section */
+    margin-top: 20px; /* Margin above the section */
+    text-align:left; /* Center align text */
+}
+
+/* Headings in About Section */
+.about-section h1 {
+    font-size: 2em; /* Main heading size */
+    color: #003D7A; /* Dark blue color for headings */
+}
+
+.about-section h2 {
+    font-size: 1.5em; /* Sub-heading size */
+    color: #003D7A; /* Dark blue for sub-headings */
+    margin-top: 20px; /* Space above sub-headings */
+}
+
+/* Paragraph Styles */
+.about-section p {
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Team Member Styles (without bullets) */
+.team-members {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center align team members */
+    margin-top: 10px; /* Space above team member section */
+}
+
+.team-member {
+    margin: 0 15px; /* Spacing between team members */
+}
+
+.team-member strong {
+    display: block; /* Make names block elements for spacing */
+    font-size: 1.2em; /* Slightly larger font size for names */
+}
+
+/* Contact Information Styles */
+.about-section a {
+    color: #005EB8; /* Link color that matches theme */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.about-section a:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* Footer Styles (if needed) */
+footer {
+    text-align: center;
+    padding: 8px;
+    background-color: #005EB8; /* Footer color same as header */
+    color: white; 
+}
+/* Result Section Styles */
+.result-section {
+    background-color: #fff; /* White background for results section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside the section */
+    text-align: center; /* Center align text in result section */
+}
+
+/* Graph Container Styles */
+.graph-container {
+    margin-bottom: 20px; /* Space below graph image */
+}
+
+.result-section h1 {
+    font-size: 2em; /* Main heading size for results page */
+    color: #003D7A; /* Dark blue color for headings */
+}
+
+.result-section h2 {
+    font-size: 1.5em; /* Sub-heading size for best suited drug */
+    color: #003D7A; /* Dark blue for sub-headings */
+}
+/* Carousel Styles */
+.carousel-inner img {
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Make carousel icons visible */
+}
